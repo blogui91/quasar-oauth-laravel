@@ -20,6 +20,10 @@ Route.view('/', 'layouts/default')
     Route.view('/', 'index')
   })
 
+Route.view('/', 'layouts/default')
+  .children(() => {
+    Route.view('/login', 'login').name('app.login')
+  })
 Route.view('*', '404')
 
 export default Route.all()
