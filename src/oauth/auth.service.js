@@ -1,5 +1,5 @@
 import Http from 'axios'
-import { Config } from 'helpers'
+import Config from 'src/config'
 export default {
   async attemptLogin (credentials) {
     try {

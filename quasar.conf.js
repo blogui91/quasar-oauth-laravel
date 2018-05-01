@@ -8,6 +8,7 @@ module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
+      'oauth',
       'i18n',
       'axios'
     ],
@@ -80,9 +81,7 @@ module.exports = function (ctx) {
         'Ripple'
       ],
       // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
+      plugins: ['Notify', 'LocalStorage', 'SessionStorage', 'Cookies']
     },
     // animations: 'all' --- includes all animations
     animations: [
