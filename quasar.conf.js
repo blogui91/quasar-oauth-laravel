@@ -35,6 +35,16 @@ module.exports = function (ctx) {
       // extractCSS: false,
       // useNotifier: false,
       extendWebpack (cfg) {
+        // Create alias 'env' to access to env.js
+        cfg.resolve.alias.env = path.resolve(__dirname, 'config/helpers/env.js')
+
+        // Make our helper function Global, for example to use it in js files you should call it env('MY_VALUE')
+        cfg.plugins.push(
+          new webpack.ProvidePlugin({
+            'env': 'env' // this variable is our alias, it's not a string
+          })
+        )
+
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
