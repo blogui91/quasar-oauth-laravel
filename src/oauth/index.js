@@ -5,7 +5,7 @@
 
 import { Cookies, LocalStorage } from 'quasar'
 import HttpService from './auth.service'
-import { Config } from 'helpers'
+import Config from 'src/config'
 import Store from 'src/store'
 class OAuth {
   constructor () {
