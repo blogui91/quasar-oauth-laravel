@@ -32,6 +32,7 @@ module.exports = {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     'one-var': 0,
+    'camelcase': 0,
 
     'import/first': 0,
     'import/named': 2,
