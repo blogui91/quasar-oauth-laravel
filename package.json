@@ -13,6 +13,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "easy-requests": "^1.2.2",
+    "node-sass": "^4.9.0",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.0.1",
     "vue-i18n": "^7.3.3",
     "vue-routisan": "^2.1.1"
   },
