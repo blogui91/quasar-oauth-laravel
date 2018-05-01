@@ -53,6 +53,10 @@
           <q-item-side icon="rss feed" />
           <q-item-main label="Twitter" sublabel="@quasarframework" />
         </q-item>
+        <q-item v-if="currentUser" @click.native="logout">
+          <q-item-side icon="exit_to_app" />
+          <q-item-main label="Log out" sublabel="" />
+        </q-item>
       </q-list>
     </q-layout-drawer>
 
@@ -73,7 +77,16 @@ export default {
     }
   },
   methods: {
-    openURL
+    openURL,
+    logout () {
+      this.$oauth.logout()
+      this.$router.replace({ name: 'app.login' })
+    }
+  },
+  computed: {
+    currentUser () {
+      return this.$store.state.users.currentUser
+    }
   }
 }
 </script>
