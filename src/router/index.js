@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import routes from './routes'
+import { beforeEach, afterEach } from 'src/router/middlewares'
 
 Vue.use(VueRouter)
 
@@ -20,5 +20,8 @@ const Router = new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
   routes
 })
+
+Router.beforeEach(beforeEach)
+Router.afterEach(afterEach)
 
 export default Router

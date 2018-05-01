@@ -10,19 +10,21 @@
 * }
 *
 */
-
+import { web, auth, guest } from 'src/router/middlewares'
 import Route from 'vue-routisan'
 // Define path where your views are stored
 Route.setViewResolver(component => require('src/pages/' + component).default)
 
 Route.view('/', 'layouts/default')
+  .guard(web)
   .children(() => {
-    Route.view('/', 'index')
+    Route.view('/', 'index').guard(auth)
   })
 
 Route.view('/', 'layouts/default')
+  .guard(web)
   .children(() => {
-    Route.view('/login', 'login').name('app.login')
+    Route.view('/login', 'login').name('app.login').guard(guest)
   })
 Route.view('*', '404')
 
